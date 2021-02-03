@@ -1,12 +1,7 @@
 # Magical Alexa-Spotify-CD Box
 
 
-For Christmas, I signed myself up for the "Creative Engineering with Mark Rober". As part of the class we have to build something with an Arduino. Here is my project. I will have a full build video on my YouTube channel in a few weeks, but this turned out so sweet I couldn't wait to share it.
-
-I have post four videos for the project:
-The Idea: https://youtu.be/7CPkmOHev_A
-Progress: https://youtu.be/dpDbMA8f0VY
-Final Result: https://youtu.be/H2HJ-LY7-lQ | https://youtu.be/isom4NREq14
+For Christmas, I signed myself up for the "Creative Engineering with Mark Rober". As part of the class we have to build something with an Arduino. Here is my project. 
 
 For my final project in the Creative Engineering with Mark Rober class, I submit to you my magic Alexa-Spotify-CD box. 
 I just don't have the heart to throw out all my old CDs and thought this project might give them a second life. I took an 
