@@ -14,8 +14,6 @@ SpotifyClient::SpotifyClient(String clientId, String clientSecret, String device
   this->deviceName = deviceName;
 
   client.setCACert(digicert_root_ca);
-  //client.setCACert(amazon_root_ca);
-  
 }
 
 void SpotifyClient::FetchToken()
@@ -30,7 +28,7 @@ void SpotifyClient::FetchToken()
     http.addHeader("Authorization", "Basic " + authorization);
 
     int httpCode = http.POST(body);                                   
-    if (httpCode > 0) { //Check for the returning code
+    if (httpCode > 0) { 
         String returnedPayload = http.getString();
         if ( httpCode == 200 )
         {
@@ -47,14 +45,13 @@ void SpotifyClient::FetchToken()
     else {
         Serial.println("Failed to connect to https://accounts.spotify.com/api/token" );
     }
-    http.end(); //Free the resources
+    http.end(); 
 }
 
 int SpotifyClient::Shuffle()
 {
     Serial.println("Shuffle()");
     HttpResult result = CallAPI( "PUT", "https://api.spotify.com/v1/me/player/shuffle?state=true&device_id=" + deviceId, "" );
-    //int httpCode = CallAPI( "PUT", "https://api.spotify.com/v1/me/player/shuffle?state=true&device_id=" + deviceId, "" );
     return result.httpCode;
 }
 
@@ -62,7 +59,6 @@ int SpotifyClient::Next()
 {
     Serial.println("Next()");
     HttpResult result = CallAPI( "POST", "https://api.spotify.com/v1/me/player/next?device_id=" + deviceId, "" );
-    //int httpCode = CallAPI( "POST", "https://api.spotify.com/v1/me/player/next?device_id=" + deviceId, "" );
     return result.httpCode;
 }
 
@@ -74,27 +70,6 @@ int SpotifyClient::Play(String context_uri )
     String url = "https://api.spotify.com/v1/me/player/play?device_id=" + deviceId;
 
     HttpResult result = CallAPI( "PUT", url, body );
-    //int httpCode = CallAPI( "PUT", url, body );
-
-/*
-    HTTPClient http;
-    http.begin(client, "https://api.spotify.com/v1/me/player/play?device_id=" + deviceId); 
-
-    
-    String authorization = "Bearer " + accessToken;
-
-    http.addHeader("Content-Type", "application/json");
-    http.addHeader("Authorization", authorization);
-
-    int httpCode = http.PUT(body);                                   
-    if (httpCode > 0) { //Check for the returning code
-        Serial.println(httpCode);
-    }
-    else {
-        Serial.println("Error on HTTP request httpCode:" );
-    }
-    http.end(); //Free the resources
-*/
     return result.httpCode;
 }
 
@@ -106,21 +81,19 @@ HttpResult SpotifyClient::CallAPI( String method, String url, String body )
     Serial.print( " returned: " );
 
     HTTPClient http;
-//    http.begin(client, "https://api.spotify.com/v1/me/player/play?device_id=" + deviceId); 
     http.begin(client, url); 
     
     String authorization = "Bearer " + accessToken;
 
-    http.addHeader("Content-Type", "application/json");
-    http.addHeader("Authorization", authorization);
+    http.addHeader(F("Content-Type"), "application/json");
+    http.addHeader(F("Authorization"), authorization);
 
+    // address bug where Content-Length not added by HTTPClient is content length is zero
     if ( body.length() == 0 )
     {
          http.addHeader(F("Content-Length"), String(0));
     }
 
-    //int httpCode = http.PUT(body);                                 
-    //int httpCode = 0;
     if ( method == "PUT" )
     {
         result.httpCode = http.PUT(body); 
@@ -134,18 +107,20 @@ HttpResult SpotifyClient::CallAPI( String method, String url, String body )
         result.httpCode = http.GET(); 
     }    
 
-    if (result.httpCode > 0) { //Check for the returning code
+    if (result.httpCode > 0) 
+    { 
         Serial.println(result.httpCode);
-        if ( http.getSize() > 0 ){
+        if ( http.getSize() > 0 )
+        {
             result.payload = http.getString();
         }
-        
     }
-    else {
+    else 
+    {
         Serial.print("Failed to connect to ");
         Serial.println(url);
     }
-    http.end(); //Free the resources
+    http.end(); 
 
     return result;
 }

@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceRoot}",
-                "F:\\Users\\michael\\Dropbox\\Development\\MakerAtPlayGitHubRepo\\esp32SpotifyButton\\**",
+                "F:\\Users\\michael\\Dropbox\\Development\\MakerAtPlayGitHubRepo\\esp32SpotifyEchoDot\\**",
                 "C:\\Users\\michael\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\**",
                 "C:\\Users\\michael\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\1.0.4\\**",
                 "C:\\Users\\michael\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\1.0.4\\cores\\**",
