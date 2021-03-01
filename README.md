@@ -12,6 +12,12 @@ Birdseye Maple case that I built.
 
 See my YouTube video for more information.
 
+## Magical Spotify Player  
+
+
+[![How to Build a Cool Spotify Player](https://img.youtube.com/vi/H_9H8qFnDr8/0.jpg)](https://youtu.be/H_9H8qFnDr8 "How to Build a Cool Spotify Player")
+
+
 ## Magical Alexa-Spotify-CD Box  
 
 [![Magical Alexa-Spotify-CD Box](https://img.youtube.com/vi/H2HJ-LY7-lQ/0.jpg)](https://youtu.be/H2HJ-LY7-lQ "Magical Alexa-Spotify-CD Box")
