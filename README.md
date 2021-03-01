@@ -14,9 +14,12 @@ See my YouTube video for more information.
 
 ## Magical Spotify Player  
 
-
 [![How to Build a Cool Spotify Player](https://img.youtube.com/vi/H_9H8qFnDr8/0.jpg)](https://youtu.be/H_9H8qFnDr8 "How to Build a Cool Spotify Player")
 
+
+## How to use Spotify API on ESP32 with NFC Reader to control Echo Dot
+
+[![Code walk thru](https://img.youtube.com/vi/RMtRH-3sTR4/0.jpg)](https://youtu.be/RMtRH-3sTR4 "Code walk thru")
 
 ## Magical Alexa-Spotify-CD Box  
 
