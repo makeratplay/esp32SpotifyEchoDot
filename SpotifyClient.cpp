@@ -177,6 +177,7 @@ String SpotifyClient::GetDevices()
      deviceId = GetDeviceId(result.payload);
      Serial.print("Device ID: ");
      Serial.println(deviceId);
+     return deviceId;
 }
 
 
